@@ -1,0 +1,25 @@
+// font-family: 'Lato', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  color: #505962;
+  background-color: #505962;
+}
+
+// Topbar Scrolling Offset
+.offset::before {
+  height: 4rem;
+  margin-top: -4rem;
+  content: '';
+  display: block;
+}
+
+//Extra Boostrap Column Padding
+[class*='col-'] {
+  padding: 1rem;
+}
+
+/*============= NAVIGATION =============*/
+@import 'navbar';
