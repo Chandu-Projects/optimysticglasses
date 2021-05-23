@@ -22,7 +22,7 @@ const Topbar: FC<Props> = (props) => {
     <Navbar color='dark' dark expand='lg' fixed={'top'}>
       <Container fluid={true}>
         <NavbarBrand href='#'>
-          <img src={logo} />
+          <img src={logo} alt='logo' />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
 
