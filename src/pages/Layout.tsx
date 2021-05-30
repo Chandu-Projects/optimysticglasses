@@ -1,7 +1,9 @@
 import React, { FC, Fragment } from 'react';
 import Body from '../components/body/Body';
-import Topbar from '../components/topbar/Topbar';
 import $ from 'jquery';
+import Home from './home/index';
+import Topbar from './topbar/Topbar';
+import Footer from './footer/Footer';
 
 interface Props {}
 
@@ -9,9 +11,9 @@ const Layout: FC<Props> = (props) => {
   window.addEventListener('scroll', (event: any) => {
     // scroll event detected
     if (event?.currentTarget?.scrollY > 300) {
-      $('.navbar').addClass('solid');
+      $('.fixed-top').addClass('solid');
     } else {
-      $('.navbar').removeClass('solid');
+      $('.fixed-top').removeClass('solid');
     }
   });
 
@@ -28,7 +30,10 @@ const Layout: FC<Props> = (props) => {
   return (
     <Fragment>
       <Topbar />
-      <Body></Body>
+      <Body>
+        <Home />
+      </Body>
+      <Footer />
     </Fragment>
   );
 };

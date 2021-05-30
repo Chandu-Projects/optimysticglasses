@@ -1,0 +1,32 @@
+.frame-card-div {
+  border: none !important;
+  cursor: pointer;
+  :hover {
+    z-index: 1;
+    border: solid 2px #cecece;
+    // transition: 1s;
+  }
+}
+
+.frame-card {
+  border: none;
+  padding: 0.5rem;
+}
+
+.frame-card-image {
+  border-radius: 8px;
+  pointer-events: none;
+}
+.frame-card-body {
+  pointer-events: none;
+}
+
+.frame-card-title {
+  border-bottom: solid 1px #ececec;
+  padding-bottom: 8px;
+  pointer-events: none;
+}
+
+.frame-card-description {
+  pointer-events: none;
+}

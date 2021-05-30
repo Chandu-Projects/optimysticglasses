@@ -4,8 +4,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
-  color: #505962;
-  background-color: #505962;
+  // color: #505962;
 }
 
 // Topbar Scrolling Offset
@@ -17,9 +16,24 @@ body {
 }
 
 //Extra Boostrap Column Padding
-[class*='col-'] {
-  padding: 1rem;
-}
+// [class*='col-'] {
+//   padding: 1rem;
+// }
 
 /*============= NAVIGATION =============*/
 @import 'navbar';
+
+/*============= CAROUSEL =============*/
+@import 'carousel';
+
+/*============= CARD =============*/
+@import 'card';
+
+/*============= LABEL =============*/
+@import 'label';
+
+/*============= LINK =============*/
+@import 'link';
+
+/*============= FOOTER =============*/
+@import 'footer';
