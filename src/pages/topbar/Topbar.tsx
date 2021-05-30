@@ -43,6 +43,9 @@ const Topbar: FC<Props> = (props) => {
             <NavItem>
               <NavLink href='#home'>Home Eye Test</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href='#contactus'>Contact us</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Container>

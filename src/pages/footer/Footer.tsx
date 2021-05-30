@@ -8,7 +8,7 @@ interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <Navbar color='dark' dark expand='lg' fixed={'bottom'}>
+    <Navbar color='dark' dark expand='lg' id='contactus'>
       <Container fluid={true}>
         <Row style={{ width: '100%' }}>
           <Col lg='3' md='3' sm='12' xs='12' className='col-footer'>
