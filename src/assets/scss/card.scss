@@ -1,32 +1,50 @@
-.frame-card-div {
-  border: none !important;
+/*============= FRAMECARD =============*/
+.frame-card-wrapper {
+  border: none;
   cursor: pointer;
-  :hover {
+  border: solid 1px transparent;
+  border-radius: 8px;
+  &:hover {
     z-index: 1;
-    border: solid 2px #cecece;
-    // transition: 1s;
+    border: solid 1px #cecece;
   }
 }
 
 .frame-card {
   border: none;
-  padding: 0.5rem;
-}
-
-.frame-card-image {
-  border-radius: 8px;
-  pointer-events: none;
-}
-.frame-card-body {
-  pointer-events: none;
+  padding: 0rem 1rem;
 }
 
 .frame-card-title {
   border-bottom: solid 1px #ececec;
   padding-bottom: 8px;
-  pointer-events: none;
+  font-weight: 500;
+  color: #8d8d14;
 }
 
 .frame-card-description {
-  pointer-events: none;
+  font-weight: 500;
+}
+
+/*============= SUNGLASS =============*/
+.sunglass-card {
+  height: 400px;
+  width: 100%;
+  border-radius: 50%;
+  border: solid 2px #cecece;
+  width: 358px;
+  height: 358px;
+  transition: all 0.2s ease-in;
+  font-size: 36px;
+  color: #000;
+  font-weight: 500;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &:hover {
+    border-radius: 8px;
+    color: #000;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+      0px -5px 10px rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease-in;
+  }
 }

@@ -1,5 +1,4 @@
-import React from 'react';
-// import { Link as Link1 } from 'react-router-dom';
+import { FC } from 'react';
 
 interface Props {
   href: string;
@@ -9,15 +8,16 @@ interface Props {
   style?: any;
 }
 
-const Link = (props: Props) => {
+const Link: FC<Props> = (props: Props) => {
   return (
     <a
-      className='link-css'
+      className='link'
       style={{ ...props.style }}
       href={props.href}
       target={props.isExternal ? '_blank' : ''}
+      rel='noreferrer'
     >
-      {props.icon && <span className='label-icon'>{props.icon}</span>}
+      {props.icon && <span className='link-icon'>{props.icon}</span>}
       {props.value}
     </a>
   );

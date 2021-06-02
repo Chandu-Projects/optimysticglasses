@@ -1,13 +1,13 @@
-import React, { FC, Fragment } from 'react';
+import { FC, Fragment } from 'react';
 import Body from '../components/body/Body';
 import $ from 'jquery';
 import Home from './home/index';
-import Topbar from './topbar/Topbar';
+import Navbar from './navbar/Navbar';
 import Footer from './footer/Footer';
 
 interface Props {}
 
-const Layout: FC<Props> = (props) => {
+const Layout: FC<Props> = (props: Props) => {
   window.addEventListener('scroll', (event: any) => {
     // scroll event detected
     if (event?.currentTarget?.scrollY > 300) {
@@ -29,7 +29,7 @@ const Layout: FC<Props> = (props) => {
 
   return (
     <Fragment>
-      <Topbar />
+      <Navbar />
       <Body>
         <Home />
       </Body>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   onClick: any;
 }
 
-const FullWidth = (props: Props) => {
+const FullWidth: FC<Props> = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [animating, setAnimating] = useState(false);
 
@@ -61,7 +61,6 @@ const FullWidth = (props: Props) => {
         {`.custom-tag {
               max-width: 100%;
               height: 75vh;
-            //   background: black;
             }`}
       </style>
       <Carousel

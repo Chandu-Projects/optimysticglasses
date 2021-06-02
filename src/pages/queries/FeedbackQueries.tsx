@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface Props {}
 
-const FeedbackQueries: FC<Props> = (props) => {
+const FeedbackQueries: FC<Props> = (props: Props) => {
   return (
     <div id='feedback-queries' className='offset'>
       <h1 style={{ color: 'white', marginTop: '4rem' }}>

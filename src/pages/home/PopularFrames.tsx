@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { frames } from './jsons/frames';
 import FrameCard from '../../components/card/FrameCard';
+import Title from '../../components/title/Title';
 
 interface Props {}
 
@@ -10,10 +11,8 @@ const PopularFrames: FC<Props> = (props: Props) => {
     alert(`load details of ${id}`);
   };
   return (
-    <Container fluid={true}>
-      <div style={{ textAlign: 'center', marginTop: '8px' }}>
-        Popular Frames
-      </div>
+    <Container>
+      <Title value={'Popular Frames'} />
       <Row>
         {frames.map((frame: any) => (
           <Col lg='4' md='4' sm='12' xs='12'>

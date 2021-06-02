@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Label as Label1 } from 'reactstrap';
 
 interface Props {
@@ -8,9 +8,9 @@ interface Props {
   style?: any;
 }
 
-const Label = (props: Props) => {
+const Label: FC<Props> = (props: Props) => {
   return (
-    <Label1 className='label-css' style={{ ...props.style }}>
+    <Label1 className='label' style={{ ...props.style }}>
       {!props.rightAlign && props.icon && (
         <span className='label-icon-left'>{props.icon}</span>
       )}

@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react';
+import { useState, FC } from 'react';
 import {
   Navbar,
   Container,
@@ -13,7 +13,7 @@ import logo from '../../assets/images/topbar/logo.png';
 
 interface Props {}
 
-const Topbar: FC<Props> = (props) => {
+const Topbar: FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);

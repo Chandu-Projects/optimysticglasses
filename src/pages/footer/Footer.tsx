@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'react-feather';
 import { Container, Row, Col, Navbar } from 'reactstrap';
 import Label from '../../components/label/Label';
@@ -6,12 +6,18 @@ import Link from '../../components/link/Link';
 
 interface Props {}
 
-const Footer = (props: Props) => {
+const Footer: FC<Props> = (props: Props) => {
   return (
-    <Navbar color='dark' dark expand='lg' id='contactus'>
+    <Navbar
+      color='dark'
+      dark
+      expand='lg'
+      id='contactus'
+      style={{ marginTop: '2rem' }}
+    >
       <Container fluid={true}>
         <Row style={{ width: '100%' }}>
-          <Col lg='3' md='3' sm='12' xs='12' className='col-footer'>
+          <Col lg='3' md='3' sm='12' xs='12' className='footer-col'>
             <Label
               value='Contact us today'
               style={{
@@ -22,7 +28,7 @@ const Footer = (props: Props) => {
               rightAlign
             />
           </Col>
-          <Col lg='3' md='3' sm='12' xs='12' className='col-footer'>
+          <Col lg='3' md='3' sm='12' xs='12' className='footer-col'>
             <Label
               value='+91-916-414-1804'
               icon={<Phone size={16} />}
@@ -31,7 +37,7 @@ const Footer = (props: Props) => {
               }}
             />
           </Col>
-          <Col lg='4' md='4' sm='12' xs='12' className='col-footer'>
+          <Col lg='4' md='4' sm='12' xs='12' className='footer-col'>
             <Label
               value='optimisticglasses@gmail.com'
               icon={<Mail size={16} />}
@@ -42,7 +48,7 @@ const Footer = (props: Props) => {
             />
           </Col>
 
-          <Col lg='1' md='1' sm='12' xs='12' className='col-footer ms-auto'>
+          <Col lg='1' md='1' sm='12' xs='12' className='footer-col ms-auto'>
             <Link
               icon={<MapPin size={16} />}
               isExternal={true}

@@ -1,36 +1,12 @@
-import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
-} from 'reactstrap';
-
-const items1 = [
-  {
-    id: 1,
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-  },
-  {
-    id: 2,
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-  },
-  {
-    id: 3,
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-  },
-];
+import { FC, useState } from 'react';
+import { Carousel, CarouselItem, CarouselControl } from 'reactstrap';
 
 interface Props {
   items: any;
   onClick: any;
 }
 
-const CarouselCard = (props: Props) => {
+const CarouselCard: FC<Props> = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
