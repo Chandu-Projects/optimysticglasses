@@ -1,15 +1,19 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
+import CarouselLoader from '../loader/CarouselLoader';
 
 interface Props {
   items: any;
   onClick: any;
+  loading?: boolean;
 }
 
 const FullWidth: FC<Props> = (props: Props) => {
+  //useState
   const [activeIndex, setActiveIndex] = useState(1);
   const [animating, setAnimating] = useState(false);
 
+  //constants
   const items = props.items;
 
   const next = () => {
@@ -32,14 +36,10 @@ const FullWidth: FC<Props> = (props: Props) => {
   const slides = items.map((item: any) => {
     return (
       <CarouselItem
-        className='custom-tag'
-        tag='div'
+        className='full-width-carousel'
         key={item.id}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        // onEnter={() => {
-        //   alert('clicked');
-        // }}
         slide={true}
       >
         <img
@@ -55,14 +55,12 @@ const FullWidth: FC<Props> = (props: Props) => {
     );
   });
 
+  if (props.loading) {
+    return <CarouselLoader />;
+  }
+
   return (
     <div>
-      <style>
-        {`.custom-tag {
-              max-width: 100%;
-              height: 75vh;
-            }`}
-      </style>
       <Carousel
         activeIndex={activeIndex}
         next={next}
