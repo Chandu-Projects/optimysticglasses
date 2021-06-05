@@ -1,8 +1,8 @@
-import { useState, FC } from 'react';
+import React, { useState, FC } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Navbar,
   Container,
-  NavbarBrand,
   NavbarToggler,
   Collapse,
   Nav,
@@ -21,30 +21,42 @@ const Topbar: FC<Props> = (props: Props) => {
   return (
     <Navbar color='dark' dark expand='lg' fixed={'top'}>
       <Container fluid={true}>
-        <NavbarBrand href='#'>
+        <Link to='/' className='navbar-image'>
           <img src={logo} alt='logo' />
-        </NavbarBrand>
+        </Link>
         <NavbarToggler onClick={toggle} />
 
         <Collapse isOpen={isOpen} navbar id='navbarResponsive'>
           <Nav className='ms-auto' navbar>
             <NavItem>
-              <NavLink href='#home'>Home</NavLink>
+              <Link to='/' className='nav-link'>
+                Home
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#home'>Eye Glassess</NavLink>
+              <Link to='/list' className='nav-link'>
+                Eye Glassess
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#home'>Sun Glasses</NavLink>
+              <Link to='/list' className='nav-link'>
+                Sun Glasses
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#home'>Contact Lens</NavLink>
+              <Link to='lense' className='nav-link'>
+                Contact Lens
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#home'>Home Eye Test</NavLink>
+              <Link to='eyetest' className='nav-link'>
+                Home Eye Test
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#contactus'>Contact us</NavLink>
+              <NavLink href='#contactus' className='nav-link'>
+                Contact us
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

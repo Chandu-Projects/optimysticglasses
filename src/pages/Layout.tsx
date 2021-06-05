@@ -1,11 +1,11 @@
-import { FC, Fragment } from 'react';
-import Body from '../components/body/Body';
+import React, { FC, Fragment } from 'react';
 import $ from 'jquery';
-import Home from './home/index';
 import Navbar from './navbar/Navbar';
 import Footer from './footer/Footer';
 
-interface Props {}
+interface Props {
+  children: any;
+}
 
 const Layout: FC<Props> = (props: Props) => {
   window.addEventListener('scroll', (event: any) => {
@@ -30,9 +30,7 @@ const Layout: FC<Props> = (props: Props) => {
   return (
     <Fragment>
       <Navbar />
-      <Body>
-        <Home />
-      </Body>
+      {props.children}
       <Footer />
     </Fragment>
   );
