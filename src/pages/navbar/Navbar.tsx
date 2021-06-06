@@ -34,12 +34,12 @@ const Topbar: FC<Props> = (props: Props) => {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to='/list' className='nav-link'>
+              <Link to='/eyeglasses' className='nav-link'>
                 Eye Glassess
               </Link>
             </NavItem>
             <NavItem>
-              <Link to='/list' className='nav-link'>
+              <Link to='/sunglasses' className='nav-link'>
                 Sun Glasses
               </Link>
             </NavItem>

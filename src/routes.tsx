@@ -1,11 +1,12 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { isUserAuthenticated } from './pages/helper/authenticationutil';
-import Home from './pages/home';
-import FrameList from './pages/list/FrameList';
+import Home from './pages/home/Home';
+import Eyeglasses from './pages/list/eyeglasses/Eyeglasses';
+import Sunglasses from './pages/list/sunglasses/Sunglasses';
 
 // handle auth and authorization
-const PrivateRoute = ({ component: Component, roles, ...rest }: any) => (
+const PrivateRoute = ({ component: Component, ...rest }: any) => (
   <Route
     {...rest}
     render={(props) => {
@@ -32,23 +33,30 @@ const routes = [
     exact: true,
   },
   {
-    path: '/list',
-    name: 'List',
-    component: FrameList,
-    route: PrivateRoute,
+    path: '/eyeglasses',
+    name: 'Eye Glasses',
+    component: Eyeglasses,
+    route: Route,
+    exact: true,
+  },
+  {
+    path: '/sunglasses',
+    name: 'Sun Glasses',
+    component: Sunglasses,
+    route: Route,
     exact: true,
   },
   {
     path: '/details',
     name: 'Details',
-    component: Home,
+    component: PrivateRoute,
     route: Route,
     exact: true,
   },
   {
     path: '/lense',
     name: 'Contact Lense',
-    component: FrameList,
+    component: PrivateRoute,
     route: Route,
     exact: true,
   },

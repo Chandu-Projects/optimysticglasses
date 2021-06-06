@@ -1,9 +1,7 @@
-import React, { FC } from 'react';
-import { Col, Container, Row } from 'reactstrap';
-import FrameCard from '../../components/card/FrameCard';
+import React, { FC, Fragment } from 'react';
 import Title from '../../components/title/Title';
 import { useSelector } from 'react-redux';
-import GrowSpinner from '../../components/loader/GrowSpinner';
+import Frames from '../common/Frames';
 
 interface Props {}
 
@@ -16,41 +14,11 @@ const PopularFrames: FC<Props> = (props: Props) => {
     alert(`load details of ${id}`);
   };
 
-  const getFrames = () => {
-    if (loading) {
-      return (
-        <GrowSpinner
-          style={{
-            right: '45%',
-            position: 'absolute',
-            top: '80%',
-            transform: 'translate(0%, -80%)',
-          }}
-        />
-      );
-    } else {
-      return (
-        <Row>
-          {popularFrames.map((frame: any) => (
-            <Col lg='4' md='4' sm='12' xs='12'>
-              <FrameCard frame={frame} onClick={onClick} />
-            </Col>
-          ))}
-        </Row>
-      );
-    }
-  };
-
   return (
-    <Container
-      style={{
-        position: 'relative',
-        minHeight: '160px',
-      }}
-    >
+    <Fragment>
       <Title value={'Popular Frames'} />
-      {getFrames()}
-    </Container>
+      <Frames loading={loading} frames={popularFrames} onClick={onClick} />
+    </Fragment>
   );
 };
 
