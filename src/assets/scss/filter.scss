@@ -1,0 +1,52 @@
+.filter-frame-type-wrapper {
+  font-weight: 500;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: solid 1px #ececec;
+  border-radius: 2px;
+  padding: 12px 0px 0px 0px;
+  background-color: transparent;
+  &:hover {
+    border: solid 1px #000;
+  }
+}
+
+.selected-frame {
+  border: solid 1px #1cbbb4;
+}
+
+.collapsible-btn {
+  background: #fff;
+  border: none;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  height: fit-content;
+  border-bottom: 1px solid #d5d5d5;
+  width: 100%;
+  padding: 4px 0px 8px 0px;
+  margin-left: -8px;
+}
+
+.collapsible-arrow-down {
+  position: absolute;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid#5a5a5a;
+  margin: 10px;
+}
+
+.collapsible-arrow-up {
+  position: absolute;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #5a5a5a;
+  margin: 10px;
+}

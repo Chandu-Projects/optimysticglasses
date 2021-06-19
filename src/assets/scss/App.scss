@@ -19,6 +19,12 @@ body {
 /*============= FONTS =============*/
 @import '../fonts/fonts';
 
+/*============= FONT CSS =============*/
+@import 'font';
+
+/*============= BOX-SHADOW =============*/
+@import 'boxshadow';
+
 /*============= NAVIGATION =============*/
 @import 'navbar';
 
@@ -31,11 +37,14 @@ body {
 /*============= LABEL =============*/
 @import 'label';
 
-/*============= LABEL =============*/
-@import 'title';
-
-/*============= LINK =============*/
-@import 'link';
-
 /*============= FOOTER =============*/
 @import 'footer';
+
+/*============= DROPDOWN =============*/
+@import 'dropdown';
+
+/*============= FILTER =============*/
+@import 'filter';
+
+/*============= CHECKBOX =============*/
+@import 'checkbox';

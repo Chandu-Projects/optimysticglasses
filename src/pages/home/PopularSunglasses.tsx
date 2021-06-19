@@ -21,7 +21,7 @@ const PopularSunglasses: FC<Props> = (props: Props) => {
       >
         <Row>
           {sunglasses.map((frame: any) => (
-            <Col lg='6' md='6' sm='12' xs='12'>
+            <Col lg='6' md='6' sm='12' xs='12' className='mb-4'>
               <SunglassCard frame={frame} onClick={onClick} />
             </Col>
           ))}

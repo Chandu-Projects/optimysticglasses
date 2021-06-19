@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import List from '../common/List';
+import Filter from './Filter';
 
 interface Props {}
 
@@ -12,7 +13,7 @@ const Sunglasses: FC<Props> = (props: Props) => {
     alert(`load details of ${id}`);
   };
 
-  return <List onClick={onClick} />;
+  return <List onClick={onClick} filter={<Filter />} />;
 };
 
 export default Sunglasses;

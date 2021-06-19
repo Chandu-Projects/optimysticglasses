@@ -11,13 +11,13 @@ interface Props {
 const Link: FC<Props> = (props: Props) => {
   return (
     <a
-      className='link'
+      className='font-link'
       style={{ ...props.style }}
       href={props.href}
       target={props.isExternal ? '_blank' : ''}
       rel='noreferrer'
     >
-      {props.icon && <span className='link-icon'>{props.icon}</span>}
+      {props.icon && <span>{props.icon}</span>}
       {props.value}
     </a>
   );

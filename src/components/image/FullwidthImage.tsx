@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import CarouselLoader from '../../components/loader/CarouselLoader';
+import CarouselLoader from '../loader/CarouselLoader';
 
 interface Props {
   loading?: boolean;
   src: string;
 }
 
-const ImageFrame: FC<Props> = (props: Props) => {
+const FullwidthImage: FC<Props> = (props: Props) => {
   //useSelector
   const loading = props.loading;
   const src = props.src;
@@ -16,10 +16,10 @@ const ImageFrame: FC<Props> = (props: Props) => {
   }
 
   return (
-    <div className='full-width-carousel' key={'main-frame'}>
+    <div className='full-width-carousel'>
       <img
         src={src}
-        alt={'main-frame'}
+        alt=''
         style={{
           width: '100%',
           height: '100%',
@@ -29,4 +29,4 @@ const ImageFrame: FC<Props> = (props: Props) => {
   );
 };
 
-export default ImageFrame;
+export default FullwidthImage;

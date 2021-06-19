@@ -7,8 +7,8 @@ interface Props {
 
 const Title: FC<Props> = (props: Props) => {
   return (
-    <div className='title-wrapper'>
-      <Label className='title'>{props.value}</Label>
+    <div className='text-center'>
+      <Label className='font-title'>{props.value}</Label>
     </div>
   );
 };

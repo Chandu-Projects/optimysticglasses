@@ -29,7 +29,7 @@ const Frames: FC<Props> = (props: Props) => {
       return (
         <Row>
           {frames.map((frame: any) => (
-            <Col lg='4' md='4' sm='12' xs='12'>
+            <Col lg='4' md='4' sm='12' xs='12' className='mb-4'>
               <FrameCard
                 frame={frame}
                 onClick={() => props.onClick(frame.id)}
@@ -41,16 +41,7 @@ const Frames: FC<Props> = (props: Props) => {
     }
   };
 
-  return (
-    <Container
-      style={{
-        position: 'relative',
-        minHeight: '50px',
-      }}
-    >
-      {getFrames()}
-    </Container>
-  );
+  return <Container fluid={true}>{getFrames()}</Container>;
 };
 
 export default Frames;

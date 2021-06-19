@@ -10,8 +10,10 @@ const FrameCard = (props: Props) => {
     <div className='frame-card-wrapper' onClick={() => props.onClick(frame.id)}>
       <div className='frame-card'>
         <CardImg width='100%' src={frame.src} alt='Image not available' />
-        <p className='frame-card-title'>{frame.title}</p>
-        <p className='frame-card-description'>{frame.description}</p>
+        {frame.title && <p className='font-frame-card-title'>{frame.title}</p>}
+        {frame.description && (
+          <p className='font-wt-500'>{frame.description}</p>
+        )}
       </div>
     </div>
   );

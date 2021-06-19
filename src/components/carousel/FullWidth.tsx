@@ -1,5 +1,10 @@
 import React, { FC, useState } from 'react';
-import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselIndicators,
+  CarouselCaption,
+} from 'reactstrap';
 import CarouselLoader from '../loader/CarouselLoader';
 
 interface Props {
@@ -50,6 +55,11 @@ const FullWidth: FC<Props> = (props: Props) => {
             height: '100%',
           }}
           onClick={() => props.onClick(item.id)}
+        />
+        <CarouselCaption
+          captionText={item.caption_text}
+          captionHeader={item.caption_header}
+          // className='text-uppercase'
         />
       </CarouselItem>
     );

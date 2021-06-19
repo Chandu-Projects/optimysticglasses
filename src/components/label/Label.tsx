@@ -10,7 +10,7 @@ interface Props {
 
 const Label: FC<Props> = (props: Props) => {
   return (
-    <Label1 className='label' style={{ ...props.style }}>
+    <Label1 className='font-label' style={{ ...props.style }}>
       {!props.rightAlign && props.icon && (
         <span className='label-icon-left'>{props.icon}</span>
       )}

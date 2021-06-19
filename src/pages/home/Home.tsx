@@ -29,7 +29,6 @@ const Home: FC<Props> = (props: Props) => {
   };
   return (
     <div id='home' className='offset'>
-      {/* <h1 style={{ color: 'white', marginTop: '4rem' }}></h1> */}
       <FullWidth
         items={carouselFrames}
         onClick={onImageClick}
