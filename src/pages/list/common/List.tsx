@@ -53,6 +53,7 @@ const List: FC<Props> = (props: Props) => {
                 onClick={props.onClick}
                 frames={frames}
                 loading={loading}
+                steps={6}
               />
             </div>
           </Col>

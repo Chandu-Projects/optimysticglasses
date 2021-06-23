@@ -17,7 +17,12 @@ const PopularFrames: FC<Props> = (props: Props) => {
   return (
     <Fragment>
       <Title value={'Popular Frames'} />
-      <Frames loading={loading} frames={popularFrames} onClick={onClick} />
+      <Frames
+        loading={loading}
+        frames={popularFrames}
+        onClick={onClick}
+        steps={3}
+      />
     </Fragment>
   );
 };

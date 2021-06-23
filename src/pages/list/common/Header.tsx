@@ -36,7 +36,7 @@ const Header: FC<Props> = (props: Props) => {
   return (
     <Container fluid={true}>
       <Row className='mb-4'>
-        <Col lg='10' md='10' sm='10' xs='10' className='mb-1'>
+        <Col lg='9' md='9' sm='9' xs='9' className='mb-1'>
           <Input
             placeholder='What are you looking for?'
             value={''}
@@ -45,10 +45,10 @@ const Header: FC<Props> = (props: Props) => {
           />
         </Col>
         <Col
-          lg='2'
-          md='2'
-          sm='2'
-          xs='2'
+          lg='3'
+          md='3'
+          sm='3'
+          xs='3'
           className='px-0'
           style={{ marginTop: '-8px', marginLeft: '0px' }}
         >
