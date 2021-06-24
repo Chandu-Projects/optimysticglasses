@@ -11,3 +11,4 @@ export const LOAD_LIST__FRAMES = 'LOAD_LIST__FRAMES';
 export const LIST_FRAME_SUCCESS = 'LIST_FRAME_SUCCESS';
 export const LIST_FRAME_FAILED = 'LIST_FRAME_FAILED';
 export const LIST_SORT = 'LIST_SORT';
+export const LIST_FILTER = 'LIST_FILTER';

@@ -3,6 +3,7 @@ import {
   LIST_FRAME_SUCCESS,
   LIST_FRAME_FAILED,
   LIST_SORT,
+  LIST_FILTER,
 } from '../../helper/actionTypes';
 
 type ListAction = { type: string; payload: {} | [] | string };
@@ -22,4 +23,9 @@ export const listFrameFailed = (data: any): ListAction => ({
 export const sortList = (sortby: number, selected: any): ListAction => ({
   type: LIST_SORT,
   payload: { sortby, selected },
+});
+
+export const filterList = (data: any): ListAction => ({
+  type: LIST_FILTER,
+  payload: data,
 });

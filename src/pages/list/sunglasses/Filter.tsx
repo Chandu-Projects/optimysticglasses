@@ -40,44 +40,36 @@ const Filter: FC<Props> = (props: Props) => {
       <Collapsible title='Frame Type' isOpen={true}>
         <Row className='mb-4'>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={fullrim} onClick={() => {}} isSelected={false} />
+            <SmallImage frame={fullrim} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={rimless} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={rimless} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={halfrim} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={halfrim} onClick={() => {}} />
           </Col>
         </Row>
       </Collapsible>
       <Collapsible title='Frame Shape' isOpen={true}>
         <Row className='mb-4'>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage
-              frame={rectangle}
-              onClick={() => {}}
-              isSelected={false}
-            />
+            <SmallImage frame={rectangle} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={round} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={round} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={cateye} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={cateye} onClick={() => {}} />
           </Col>
 
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage
-              frame={wayfarer}
-              onClick={() => {}}
-              isSelected={false}
-            />
+            <SmallImage frame={wayfarer} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={aviator} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={aviator} onClick={() => {}} />
           </Col>
           <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={square} onClick={() => {}} isSelected={true} />
+            <SmallImage frame={square} onClick={() => {}} />
           </Col>
         </Row>
       </Collapsible>

@@ -3,6 +3,7 @@ import {
   LIST_FRAME_SUCCESS,
   LIST_FRAME_FAILED,
   LIST_SORT,
+  LIST_FILTER,
 } from '../../helper/actionTypes';
 
 const INIT = {
@@ -11,6 +12,7 @@ const INIT = {
   frames: [],
   sortby: 0,
   selected: { label: 'Sort By', values: 0 },
+  filterAttr: [],
 };
 
 interface TypeState {
@@ -19,6 +21,7 @@ interface TypeState {
   frames: Array<any>;
   sortby: number;
   selected: any;
+  filterAttr: any;
 }
 
 export const List = (state: TypeState = INIT, action: any) => {
@@ -49,6 +52,11 @@ export const List = (state: TypeState = INIT, action: any) => {
         ...state,
         sortby: payload.sortby,
         selected: payload.selected,
+      };
+    case LIST_FILTER:
+      return {
+        ...state,
+        filterAttr: payload,
       };
 
     default:

@@ -3,13 +3,12 @@ import { FC } from 'react';
 interface Props {
   frame: any;
   onClick: any;
-  isSelected: boolean;
 }
 
 const SmallImage: FC<Props> = (props: Props) => {
   const frame = props.frame;
   let classname = 'filter-frame-type-wrapper font-filter-text';
-  if (props.isSelected) {
+  if (frame.selected) {
     classname += ' selected-frame';
   }
   return (

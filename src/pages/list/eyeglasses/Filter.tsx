@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import Checkbox from '../../../components/checkbox/Checkbox';
 import Collapsible from '../../../components/collapsible/Collapsible';
@@ -8,23 +8,24 @@ import { loadListFrames } from '../../../redux/root_actions';
 import {
   aviator,
   cateye,
-  fullrim,
-  halfrim,
   rectangle,
-  rimless,
   round,
   square,
   wayfarer,
 } from './jsons/frames';
 
-interface Props {}
+interface Props {
+  filterAttr: any;
+}
 
 const Filter: FC<Props> = (props: Props) => {
   //useDispatch
   const dispatch = useDispatch();
 
-  //useSelector
-  const selected = useSelector((state: any) => state.List.selected);
+  const filterAttr = props.filterAttr || {};
+
+  const frameType = filterAttr.frameType || [];
+  const frameShape = filterAttr.frameShape || [];
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,46 +40,24 @@ const Filter: FC<Props> = (props: Props) => {
       </p>
       <Collapsible title='Frame Type' isOpen={true}>
         <Row className='mb-4'>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={fullrim} onClick={() => {}} isSelected={false} />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={rimless} onClick={() => {}} isSelected={true} />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={halfrim} onClick={() => {}} isSelected={true} />
-          </Col>
+          {frameType.map((type: any) => {
+            return (
+              <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
+                <SmallImage frame={type} onClick={() => {}} />
+              </Col>
+            );
+          })}
         </Row>
       </Collapsible>
-      <Collapsible title='Frame Shape' isOpen={true}>
+      <Collapsible title='Frame Shape' isOpen={false}>
         <Row className='mb-4'>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage
-              frame={rectangle}
-              onClick={() => {}}
-              isSelected={false}
-            />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={round} onClick={() => {}} isSelected={true} />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={cateye} onClick={() => {}} isSelected={true} />
-          </Col>
-
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage
-              frame={wayfarer}
-              onClick={() => {}}
-              isSelected={false}
-            />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={aviator} onClick={() => {}} isSelected={true} />
-          </Col>
-          <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
-            <SmallImage frame={square} onClick={() => {}} isSelected={true} />
-          </Col>
+          {frameShape.map((type: any) => {
+            return (
+              <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
+                <SmallImage frame={type} onClick={() => {}} />
+              </Col>
+            );
+          })}
         </Row>
       </Collapsible>
       <Collapsible title='Frame Color'>
