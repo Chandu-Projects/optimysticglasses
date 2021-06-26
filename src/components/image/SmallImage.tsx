@@ -18,7 +18,7 @@ const SmallImage: FC<Props> = (props: Props) => {
       tabIndex={0}
     >
       <img src={frame.src} width='50px' alt='' />
-      <p className='filter-frame-type-desc'>{frame.description}</p>
+      <p className='filter-frame-type-desc'>{frame.title}</p>
     </div>
   );
 };

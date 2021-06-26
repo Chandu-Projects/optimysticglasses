@@ -3,6 +3,7 @@ import { FC } from 'react';
 interface Props {
   title: string;
   onClick: any;
+  checked?: boolean;
 }
 
 const Checkbox: FC<Props> = (props: Props) => {
@@ -13,6 +14,7 @@ const Checkbox: FC<Props> = (props: Props) => {
         className='form-check-input'
         id='checbox'
         onClick={props.onClick}
+        checked={props.checked}
       />
       <label className='font-checkbox'>{props.title}</label>
     </div>

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
+import Filter from '../common/Filter';
 import List from '../common/List';
-import Filter from './Filter';
 
 interface Props {}
 
