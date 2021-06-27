@@ -3,7 +3,7 @@ export const frameType = [
     id: 'fullrim',
     src: 'https://static.lenskart.com/images/cust_mailer/Eyeglass/FullRim.png',
     title: 'Full Rim',
-    selected: true,
+    selected: false,
   },
   {
     id: 'rimless',
@@ -24,7 +24,7 @@ export const frameShape = [
     id: 'rectangle',
     src: 'https://static.lenskart.com/images/cust_mailer/Eyeglass/Rectangle.png',
     title: 'Rectangle',
-    selected: true,
+    selected: false,
   },
   {
     id: 'round',
@@ -63,25 +63,25 @@ export const frameColor = [
     id: 'black',
     code: '#000',
     title: 'Black',
-    selected: true,
+    selected: false,
   },
   {
     id: 'grey',
     code: '#430',
     title: 'Grey',
-    selected: true,
+    selected: false,
   },
   {
     id: 'white',
     code: '#fff',
     title: 'White',
-    selected: true,
+    selected: false,
   },
   {
     id: 'red',
     code: '#ccc',
     title: 'Red',
-    selected: true,
+    selected: false,
   },
 ];
 
@@ -89,7 +89,7 @@ export const frameBrand = [
   {
     id: 'titan',
     title: 'Titan',
-    selected: true,
+    selected: false,
   },
   {
     id: 'rayban',
@@ -103,7 +103,7 @@ export const priceRange = [
     id: 'below_1k',
     title: '499-999',
     unit: 'INR',
-    selected: true,
+    selected: false,
   },
   {
     id: 'below_2k',
@@ -123,7 +123,7 @@ export const frameSize = [
   {
     id: 'small',
     title: 'Small',
-    selected: true,
+    selected: false,
   },
   {
     id: 'medium',
@@ -147,7 +147,7 @@ export const frameWidth = [
     id: '128',
     title: '128',
     unit: 'MM',
-    selected: true,
+    selected: false,
   },
   {
     id: '129',
@@ -161,7 +161,7 @@ export const gender = [
   {
     id: 'men',
     title: 'Men',
-    selected: true,
+    selected: false,
   },
   {
     id: 'women',
@@ -169,3 +169,14 @@ export const gender = [
     selected: false,
   },
 ];
+
+export const filterAttr = {
+  frameType: frameType,
+  shape: frameShape,
+  color: frameColor,
+  brand: frameBrand,
+  priceRange: priceRange,
+  gender: gender,
+  size: frameSize,
+  width: frameWidth,
+};

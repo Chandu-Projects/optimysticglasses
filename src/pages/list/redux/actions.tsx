@@ -4,6 +4,8 @@ import {
   LIST_FRAME_FAILED,
   LIST_SORT,
   LIST_FILTER,
+  CLEAR_LIST_FILTER,
+  LIST_FILTER_INIT,
 } from '../../helper/actionTypes';
 
 type ListAction = { type: string; payload: {} | [] | string };
@@ -25,7 +27,17 @@ export const sortList = (sortby: number, selected: any): ListAction => ({
   payload: { sortby, selected },
 });
 
+export const initializeFilter = (data: any): ListAction => ({
+  type: LIST_FILTER_INIT,
+  payload: data,
+});
+
 export const filterList = (data: any): ListAction => ({
   type: LIST_FILTER,
   payload: data,
+});
+
+export const clearFilter = (): ListAction => ({
+  type: CLEAR_LIST_FILTER,
+  payload: {},
 });

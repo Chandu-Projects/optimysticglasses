@@ -7,6 +7,7 @@ type Props = {
   onChange: any;
   id: string;
   className?: string;
+  autoFocus?: boolean;
 };
 
 const Input: FC<Props> = (props) => {
@@ -16,7 +17,12 @@ const Input: FC<Props> = (props) => {
     className += props.className;
   }
   return (
-    <_Input placeholder={placeholder} className={className} id={props.id} />
+    <_Input
+      placeholder={placeholder}
+      className={className}
+      id={props.id}
+      autoFocus={props.autoFocus}
+    />
   );
 };
 

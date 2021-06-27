@@ -41,8 +41,7 @@ const List: FC<Props> = (props: Props) => {
               // width: '20%',
               paddingRight: '0px',
             }}
-            // className='p-0 m-0'
-            className='mb-4'
+            className='mb-4 custom-card pt-2'
           >
             {props.filter}
           </Col>

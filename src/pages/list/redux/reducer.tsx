@@ -4,14 +4,18 @@ import {
   LIST_FRAME_FAILED,
   LIST_SORT,
   LIST_FILTER,
+  CLEAR_LIST_FILTER,
+  LIST_FILTER_INIT,
 } from '../../helper/actionTypes';
+import cloneDeep from 'lodash';
 
 const INIT = {
   loading: true,
   image: '',
   frames: [],
   sortby: 0,
-  selected: { label: 'Sort By', values: 0 },
+  selected: { label: 'Best Seller', value: 0 },
+  initFilter: [],
   filterAttr: [],
 };
 
@@ -21,6 +25,7 @@ interface TypeState {
   frames: Array<any>;
   sortby: number;
   selected: any;
+  initFilter: any;
   filterAttr: any;
 }
 
@@ -38,7 +43,7 @@ export const List = (state: TypeState = INIT, action: any) => {
         ...state,
         loading: false,
         sortby: 0,
-        selected: { label: 'Sort By', values: 0 },
+        selected: { label: 'Best Seller', value: 0 },
         image: payload.image,
         frames: payload.frames,
       };
@@ -53,10 +58,22 @@ export const List = (state: TypeState = INIT, action: any) => {
         sortby: payload.sortby,
         selected: payload.selected,
       };
+
+    case LIST_FILTER_INIT:
+      return {
+        ...state,
+        initFilter: payload,
+        filterAttr: payload,
+      };
     case LIST_FILTER:
       return {
         ...state,
         filterAttr: payload,
+      };
+    case CLEAR_LIST_FILTER:
+      return {
+        ...state,
+        filterAttr: state.initFilter,
       };
 
     default:

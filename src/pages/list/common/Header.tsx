@@ -26,38 +26,39 @@ const Header: FC<Props> = (props: Props) => {
   };
 
   const options = [
-    { label: 'Sort By', value: 0 },
+    { label: 'Best Seller', value: 0 },
     { label: 'New Arrivals', value: 1 },
-    { label: 'Best Seller', value: 2 },
-    { label: 'Price Low To High', value: 3 },
-    { label: 'Price Hight To Low', value: 4 },
+    { label: 'Price Low To High', value: 2 },
+    { label: 'Price Hight To Low', value: 3 },
   ];
 
   return (
     <Container fluid={true}>
       <Row className='mb-4'>
-        <Col lg='9' md='9' sm='9' xs='9' className='mb-1'>
-          <Input
-            placeholder='What are you looking for?'
-            value={''}
-            id='listSearch'
-            onChange={() => {}}
-          />
+        <Col lg='8' md='8' sm='8' xs='8' className='mb-1 '>
+          <div className='custom-card'>
+            <Input
+              placeholder='What are you looking for?'
+              value={''}
+              id='listSearch'
+              onChange={() => {}}
+              className='border border-white'
+              autoFocus={true}
+            />
+          </div>
         </Col>
-        <Col
-          lg='3'
-          md='3'
-          sm='3'
-          xs='3'
-          className='px-0'
-          style={{ marginTop: '-8px', marginLeft: '0px' }}
-        >
-          <Dropdown
-            options={options}
-            onSelect={onSelect}
-            selected={selected}
-            // className='d-flex justify-content-end'
-          />
+        <Col lg='4' md='4' sm='4' xs='4'>
+          <div className='d-flex p-2'>
+            <div className='font-label'>Sort by: </div>
+            <div style={{ marginTop: '-8px' }}>
+              <Dropdown
+                options={options}
+                onSelect={onSelect}
+                selected={selected}
+                className='font-label'
+              />
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
