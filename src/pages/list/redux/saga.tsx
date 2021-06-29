@@ -4,11 +4,12 @@ import { listFrameSuccess, listFrameFailed, initializeFilter } from './actions';
 import { filterAttr } from './jsons/filter';
 import { popularFrames } from './jsons/frames';
 import { image } from './jsons/image';
+import { list_output } from './jsons/list_output';
 
 function* fetchFrames(action: any) {
   try {
     // const response = yield call(Api.fetchUser, action.payload.userId);
-    yield put(listFrameSuccess({ image: image, frames: popularFrames }));
+    yield put(listFrameSuccess({ image: image, frames: list_output }));
     yield put(initializeFilter(filterAttr));
   } catch (error: any) {
     yield put(listFrameFailed(error));

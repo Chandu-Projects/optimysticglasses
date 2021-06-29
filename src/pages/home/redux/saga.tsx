@@ -15,6 +15,7 @@ import {
 } from './actions';
 import { popularFrames } from './jsons/frames';
 import { carouselFrames } from './jsons/carousel';
+import { list_output } from '../../list/redux/jsons/list_output';
 
 function* fetchCarousel(action: any) {
   try {
@@ -30,7 +31,7 @@ function* fetchFrames(action: any) {
   try {
     // const response = yield call(Api.fetchUser, action.payload.userId);
     const response = {};
-    yield put(homePoupularFramesSuccess(popularFrames));
+    yield put(homePoupularFramesSuccess(list_output));
   } catch (error: any) {
     yield put(homePoupularFramesFailed(error));
   }
