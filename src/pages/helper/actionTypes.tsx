@@ -13,4 +13,5 @@ export const LIST_FRAME_FAILED = 'LIST_FRAME_FAILED';
 export const LIST_SORT = 'LIST_SORT';
 export const LIST_FILTER_INIT = 'LIST_FILTER_INIT';
 export const LIST_FILTER = 'LIST_FILTER';
+export const LIST_BIND = 'LIST_BIND';
 export const CLEAR_LIST_FILTER = 'CLEAR_LIST_FILTER';

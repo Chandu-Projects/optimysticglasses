@@ -15,7 +15,7 @@ const List: FC<Props> = (props: Props) => {
   // useSelector
   const loading = useSelector((state: any) => state.List.loading);
   const image = useSelector((state: any) => state.List.image);
-  const frames = useSelector((state: any) => state.List.frames);
+  const bindData = useSelector((state: any) => state.List.bindData);
 
   //useDispatch
   const dispatch = useDispatch();
@@ -50,7 +50,7 @@ const List: FC<Props> = (props: Props) => {
             <div>
               <Frames
                 onClick={props.onClick}
-                frames={frames}
+                frames={bindData}
                 loading={loading}
                 steps={6}
               />

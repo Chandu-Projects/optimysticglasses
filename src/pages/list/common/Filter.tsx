@@ -1,13 +1,15 @@
 import { cloneDeep } from 'lodash';
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import Checkbox from '../../../components/checkbox/Checkbox';
 import Collapsible from '../../../components/collapsible/Collapsible';
 import SmallImage from '../../../components/image/SmallImage';
 import {
   clearFilter,
   filterList,
+  listBind,
+  listFrameSuccess,
   loadListFrames,
 } from '../../../redux/root_actions';
 
@@ -18,13 +20,15 @@ const Filter: FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
 
   //useSelector
-  const filterAttr = useSelector((state: any) => state.List.filterAttr);
+  const filterAttr = useSelector((state: any) => state.List.filterAttr) || {};
+  const frames =
+    cloneDeep(useSelector((state: any) => state.List.frames)) || [];
 
-  const frameType = filterAttr.frameType || [];
+  const frameType = filterAttr.type || [];
   const frameShape = filterAttr.shape || [];
   const frameColor = filterAttr.color || [];
   const frameBrand = filterAttr.brand || [];
-  const priceRange = filterAttr.priceRange || [];
+  const priceRange = filterAttr.price || [];
   const gender = filterAttr.gender || [];
   const frameSize = filterAttr.size || [];
   const frameWidth = filterAttr.width || [];
@@ -41,7 +45,26 @@ const Filter: FC<Props> = (props: Props) => {
     attributes[key] = modified;
     dispatch(filterList(attributes));
 
-    // dispatch(loadListFrames());
+    const list: Array<any> = [];
+    let variants: Array<any> = [];
+    frames.forEach((frame: any) => {
+      if (frame[key] && frame[key] === id) {
+        list.push(frame);
+      } else {
+        variants = [];
+        frame.variants.forEach((sku: any) => {
+          if (sku[key] && sku[key] === id) {
+            variants.push(sku);
+          }
+        });
+        if (variants.length > 0) {
+          frame.variants = variants;
+          list.push(frame);
+        }
+      }
+    });
+
+    dispatch(listBind(list));
   };
 
   useEffect(() => {
@@ -73,7 +96,7 @@ const Filter: FC<Props> = (props: Props) => {
               <Col lg='4' md='4' sm='6' xs='6' className='px-1 mb-2'>
                 <SmallImage
                   frame={item}
-                  onClick={() => handleFilter('frameType', item.id)}
+                  onClick={() => handleFilter('type', item.id)}
                 />
               </Col>
             );
@@ -131,7 +154,7 @@ const Filter: FC<Props> = (props: Props) => {
               <Col lg='12' md='12' sm='3' xs='3' className='px-1 mb-2'>
                 <Checkbox
                   title={item.title}
-                  onClick={() => handleFilter('priceRange', item.id)}
+                  onClick={() => handleFilter('price', item.id)}
                   checked={item.selected}
                 />
               </Col>

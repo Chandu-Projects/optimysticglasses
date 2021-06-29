@@ -4,6 +4,7 @@ import {
   LIST_FRAME_FAILED,
   LIST_SORT,
   LIST_FILTER,
+  LIST_BIND,
   CLEAR_LIST_FILTER,
   LIST_FILTER_INIT,
 } from '../../helper/actionTypes';
@@ -34,6 +35,11 @@ export const initializeFilter = (data: any): ListAction => ({
 
 export const filterList = (data: any): ListAction => ({
   type: LIST_FILTER,
+  payload: data,
+});
+
+export const listBind = (data: any): ListAction => ({
+  type: LIST_BIND,
   payload: data,
 });
 

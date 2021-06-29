@@ -4,6 +4,7 @@ import {
   LIST_FRAME_FAILED,
   LIST_SORT,
   LIST_FILTER,
+  LIST_BIND,
   CLEAR_LIST_FILTER,
   LIST_FILTER_INIT,
 } from '../../helper/actionTypes';
@@ -13,6 +14,7 @@ const INIT = {
   loading: true,
   image: '',
   frames: [],
+  bindData: [],
   sortby: 0,
   selected: { label: 'Best Seller', value: 0 },
   initFilter: [],
@@ -23,6 +25,7 @@ interface TypeState {
   loading: boolean;
   image: string;
   frames: Array<any>;
+  bindData: Array<any>;
   sortby: number;
   selected: any;
   initFilter: any;
@@ -69,6 +72,12 @@ export const List = (state: TypeState = INIT, action: any) => {
       return {
         ...state,
         filterAttr: payload,
+      };
+    case LIST_BIND:
+      return {
+        ...state,
+        loading: false,
+        bindData: payload,
       };
     case CLEAR_LIST_FILTER:
       return {

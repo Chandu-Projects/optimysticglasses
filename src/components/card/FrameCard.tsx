@@ -12,9 +12,9 @@ const FrameCard = (props: Props) => {
   const getSelectedColor = (index: number) => {
     return variants.map((item: any, idx: number) => {
       if (idx === index) {
-        return { color: item.color, selected: true };
+        return { color: item.code, selected: true };
       }
-      return { color: item.color, selected: false };
+      return { color: item.code, selected: false };
     });
   };
 
@@ -47,7 +47,7 @@ const FrameCard = (props: Props) => {
         />
 
         <p className='font-frame-card-title mt-2'>
-          {frame.brand_name} {frame.description}
+          {frame.brand} {frame.description}
         </p>
         {frame.rating && <Badge color='info'>rating</Badge>}
         <div className='d-flex justify-content-between'>
