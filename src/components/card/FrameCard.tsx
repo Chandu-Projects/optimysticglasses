@@ -49,7 +49,9 @@ const FrameCard = (props: Props) => {
         <p className='font-frame-card-title mt-2'>
           {frame.brand} {frame.description}
         </p>
-        {frame.rating && <Badge color='info'>rating</Badge>}
+        {frame.rating && <Badge color='info'>frame.rating</Badge>}
+        {frame._id}
+
         <div className='d-flex justify-content-between'>
           <div>
             <div>{price}</div>

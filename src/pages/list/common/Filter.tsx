@@ -9,7 +9,6 @@ import {
   clearFilter,
   filterList,
   listBind,
-  listFrameSuccess,
   loadListFrames,
 } from '../../../redux/root_actions';
 
@@ -33,6 +32,44 @@ const Filter: FC<Props> = (props: Props) => {
   const frameSize = filterAttr.size || [];
   const frameWidth = filterAttr.width || [];
 
+  useEffect(() => {
+    const list: Array<any> = [];
+    let variants: Array<any> = [];
+    let noFiltersApplied = true;
+    frames.forEach((frame: any) => {
+      Object.keys(filterAttr).forEach((key: any) => {
+        const attr = filterAttr[key];
+        attr.forEach((item: any) => {
+          if (item.selected) {
+            noFiltersApplied = false;
+
+            if (list.findIndex((row: any) => row._id === frame._id) === -1) {
+              if (frame[key] && item.id === frame[key]) {
+                list.push(frame);
+              } else if (!frame[key]) {
+                variants = [];
+                frame.variants.forEach((sku: any) => {
+                  if (sku[key] && sku[key] === item.id) {
+                    variants.push(sku);
+                  }
+                });
+                if (variants.length > 0) {
+                  // frame.variants = variants;
+                  list.unshift(frame);
+                }
+              }
+            }
+          }
+        });
+      });
+    });
+    if (noFiltersApplied) {
+      dispatch(listBind(frames));
+    } else {
+      dispatch(listBind(list));
+    }
+  }, [filterAttr]);
+
   const handleFilter = (key: string, id: string) => {
     const attributes = cloneDeep(filterAttr);
     let attr = attributes[key] || [];
@@ -44,27 +81,6 @@ const Filter: FC<Props> = (props: Props) => {
     });
     attributes[key] = modified;
     dispatch(filterList(attributes));
-
-    const list: Array<any> = [];
-    let variants: Array<any> = [];
-    frames.forEach((frame: any) => {
-      if (frame[key] && frame[key] === id) {
-        list.push(frame);
-      } else {
-        variants = [];
-        frame.variants.forEach((sku: any) => {
-          if (sku[key] && sku[key] === id) {
-            variants.push(sku);
-          }
-        });
-        if (variants.length > 0) {
-          frame.variants = variants;
-          list.push(frame);
-        }
-      }
-    });
-
-    dispatch(listBind(list));
   };
 
   useEffect(() => {
